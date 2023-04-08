@@ -1,0 +1,16 @@
+@use "./mixin" as *;
+
+.quote {
+    background-color: var(--primary-text);
+    border-radius: 6px;
+    text-align: center;
+
+    &__img {
+        display: block;
+        margin-inline: auto;
+    }
+
+    &__decoration {
+
+    }
+}

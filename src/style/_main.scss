@@ -1,0 +1,76 @@
+@use "./mixin" as *;
+
+main {
+    display: grid;
+    row-gap: 3.5rem;
+    margin: 3.5rem 1rem;
+
+    .heading {
+
+        &__decoration {
+            display: block;
+            transform: scale(.5);
+
+            // to position above "solution"
+            position: relative;
+            left: 5rem
+        }
+
+        &__title {
+            font-weight: 400;
+            font-size: 2.375rem;
+            line-height: 44px;
+            letter-spacing: -0.527778px;
+            color: var(--primary-text);
+        }
+
+        &__subtitle {
+            margin-block: 2rem;
+            line-height: 28px;
+            /* or 175% */
+            letter-spacing: 0.0888889px;
+        }
+
+        &__CTA {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 32px;
+            /* identical to box height, or 178% */
+            letter-spacing: -0.18px;
+            padding: 1rem 2rem;
+            background-color: var(--primary-text);
+            color: var(--contrast-primary-text);
+            border: none;
+
+            &:hover {
+                background: linear-gradient(135deg, #A060FF 0%, #CB30E3 49.21%, #FFA84E 100%);
+            }
+        }
+    }
+
+    .insights {
+        display: grid;
+        row-gap: 2rem;
+
+        &__data {
+            text-align: center;
+
+            &__n {
+                font-weight: 700;
+                font-size: 3rem;
+                line-height: 56px;
+                /* identical to box height, or 117% */
+                color: var(--primary-text)
+            }
+
+            &__title {
+                color: var(--secondary-text);
+                line-height: 26px;
+                /* identical to box height, or 162% */
+                text-align: center;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

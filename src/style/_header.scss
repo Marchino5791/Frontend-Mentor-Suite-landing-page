@@ -1,0 +1,23 @@
+@use "./mixin" as *;
+
+header {
+    @include flex-c-sb;
+    margin: 1.5rem 1rem 0;
+
+    .CTA {
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 1.5rem; /* identical to box height, or 171% */
+        letter-spacing: -0.14px;
+        font-family: inherit;
+        border: 1px solid var(--primary-text);
+        background-color: transparent;
+        padding: .75rem 1rem;
+        color: var(--primary-text);
+
+        &:hover {
+            color: var(--contrast-primary-text);
+            background-color: var(--primary-text);
+        }
+    }
+}

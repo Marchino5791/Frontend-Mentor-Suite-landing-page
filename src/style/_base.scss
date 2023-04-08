@@ -1,0 +1,26 @@
+@use "./mixin" as *;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text: hsla(219, 43%, 16%, 1);
+    --secondary-text: hsla(219, 20%, 36%, 1);
+    --contrast-primary-text: hsla(30, 29%, 97%, 1);
+    --contrast-secondary-text: hsla(30, 35%, 93%, 1);
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    background-color: var(--contrast-primay-text);
+}
+
+button {
+    cursor: pointer;
+    border-radius: 6px;
+}

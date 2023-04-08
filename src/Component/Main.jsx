@@ -26,7 +26,7 @@ export default function Main() {
                 <img src={hero} alt="Hero image" className="hero" />
             </picture>
             
-            <section className="insights">
+            <aside className="insights">
                 <Insight
                     n="2K+"
                     title="Companies"
@@ -39,7 +39,7 @@ export default function Main() {
                     n="1.2M"
                     title="Leads"
                 />
-            </section>
+            </aside>
         </main>
     )
 }

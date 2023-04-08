@@ -17,10 +17,14 @@
 
 body {
     font-family: 'Epilogue', sans-serif;
-    background-color: var(--contrast-primay-text);
+    background-color: var(--contrast-secondary-text);
 }
 
 button {
     cursor: pointer;
     border-radius: 6px;
+}
+
+img, svg {
+    display: block;
 }

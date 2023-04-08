@@ -48,6 +48,10 @@ main {
         }
     }
 
+    .hero {
+        margin-inline: auto;
+    }
+
     .insights {
         display: grid;
         row-gap: 2rem;

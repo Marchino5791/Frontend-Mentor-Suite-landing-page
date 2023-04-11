@@ -4,10 +4,15 @@ header {
     @include flex-c-sb;
     margin: 1.5rem 1rem 0;
 
+    // reset every margin to add in the app class
+    @include breakpoint ("tablet-small"){
+        margin: 0;
+    }
+
     .CTA {
         font-size: 0.875rem;
         font-weight: 700;
-        line-height: 1.5rem; /* identical to box height, or 171% */
+        line-height: 1.5rem;
         letter-spacing: -0.14px;
         font-family: inherit;
         border: 1px solid var(--primary-text);
@@ -18,6 +23,10 @@ header {
         &:hover {
             color: var(--contrast-primary-text);
             background-color: var(--primary-text);
+        }
+
+        @include breakpoint("tablet") {
+            font-size: 1rem;
         }
     }
 }

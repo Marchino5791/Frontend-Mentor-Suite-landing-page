@@ -1,21 +1,41 @@
 @use "./mixin" as *;
 
 footer {
-    margin: 3.5rem 5rem;
-  
+    margin: 3.5rem 5rem 0;
+    padding-bottom: 3.5rem;
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     row-gap: 2rem;
 
+    // reset every margin to add in the app class
+    @include breakpoint ("tablet-small") {
+        margin-block: 4.5rem 0;
+        padding-bottom: 4.5rem;
+        margin-inline: 0;
+    }
+
+    @include breakpoint ("tablet") {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+
+    @include breakpoint ("desktop") {
+        margin-top: 6rem;
+    }
+
     .logo {
         margin-inline: auto;
         grid-column-start: 2;
+
+        @include breakpoint ("tablet") {
+            margin: 0;
+            grid-column-start: 1;
+        }
     }
 
     .copy {
         font-size: 0.9375rem;
-        line-height: 32px;
-        /* identical to box height, or 213% */
+        line-height: 2rem;
         text-align: center;
         letter-spacing: 0.0833333px;
         color: var(--secondary-text);
@@ -28,8 +48,20 @@ footer {
         grid-column-start: 2;
         padding-inline: .25rem;
 
+        @include breakpoint ("tablet") {
+            padding-inline: 0;
+            grid-column-start: 3;
+            justify-content: flex-end;
+        }
+
         svg:hover {
             opacity: 0.5;
+        }
+
+        a:not(:last-of-type) {
+            @include breakpoint ("tablet") {
+                margin-right: 1.75rem;
+            }
         }
     }
 }

@@ -8,7 +8,10 @@ import "../style/_main.scss"
 
 // Img
 import curved_line_1 from "../../public/assets/pattern-curved-line-1.svg";
-import hero from "../../public/assets/image-hero-landscape.png"
+import hero_land from "../../public/assets/image-hero-landscape.webp";
+import hero_land_2x from "../../public/assets/image-hero-landscape@2x.webp";
+import hero_port from "../../public/assets/image-hero-portrait.webp";
+import hero_port_2x from "../../public/assets/image-hero-portrait@2x.webp";
 
 
 export default function Main() {
@@ -23,21 +26,25 @@ export default function Main() {
             </section>
 
             <picture>
-                <img src={hero} alt="Hero image" className="hero" />
+                <source srcSet={`${hero_port}, ${hero_port_2x} 2x`} media="(min-width: 48em)" /> 
+                <img srcSet={`${hero_land}, ${hero_land_2x} 2x`} alt="Hero image" className="hero" />
             </picture>
             
             <aside className="insights">
                 <Insight
                     n="2K+"
                     title="Companies"
+                    utilityClass="end"
                 />
                 <Insight
                     n="8"
                     title="Languages"
+                    utilityClass="center"
                 />
                 <Insight
                     n="1.2M"
                     title="Leads"
+                    utilityClass="start"
                 />
             </aside>
         </main>

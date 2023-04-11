@@ -5,7 +5,31 @@ main {
     row-gap: 3.5rem;
     margin: 3.5rem 1rem;
 
+    // reset every margin to add in the app class
+    @include breakpoint ("tablet-small") {
+        margin-inline: 0;
+    }
+
+    @include breakpoint ("tablet") {
+        margin-block: 5rem 5.75rem;
+        row-gap: 5.75rem;
+        column-gap: 7.5rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint ("desktop") {
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 2.5rem;
+    }
+
     .heading {
+
+        @include breakpoint ("tablet") {
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+            z-index: 10000;
+            align-self: center;
+        }
 
         &__decoration {
             display: block;
@@ -13,7 +37,22 @@ main {
 
             // to position above "solution"
             position: relative;
-            left: 5rem
+            left: 5rem;
+
+            @include breakpoint ("tablet") {
+                transform: scale(.75);
+                left: 12rem;
+            }
+
+            @include breakpoint ("desktop") {
+                transform: none;
+                left: 18rem;
+            }
+
+            @include breakpoint ("big-screen") {
+                transform: scale(1.125);
+                left: 19rem;
+            }
         }
 
         &__title {
@@ -22,6 +61,20 @@ main {
             line-height: 44px;
             letter-spacing: -0.527778px;
             color: var(--primary-text);
+
+            @include breakpoint ("tablet") {
+                font-size: 3.5rem;
+                line-height: 64px;
+                /* or 114% */
+                letter-spacing: -0.777778px;
+                margin-top: 1rem;
+            }
+
+            @include breakpoint ("desktop") {
+                font-size: 4.5rem;
+                line-height: 4.875rem;
+                letter-spacing: -1px;
+            }
         }
 
         &__subtitle {
@@ -29,13 +82,24 @@ main {
             line-height: 28px;
             /* or 175% */
             letter-spacing: 0.0888889px;
+
+            @include breakpoint ("tablet") {
+                margin-block: 2.5rem;
+                width: 21.875rem;
+            }
+
+            @include breakpoint ("desktop") {
+                font-size: 1.125rem;
+                line-height: 2rem;
+                letter-spacing: 0.1px;
+                margin-bottom: 3.25rem;
+            }
         }
 
         &__CTA {
             font-weight: 700;
             font-size: 18px;
-            line-height: 32px;
-            /* identical to box height, or 178% */
+            line-height: 2rem;
             letter-spacing: -0.18px;
             padding: 1rem 2rem;
             background-color: var(--primary-text);
@@ -48,13 +112,35 @@ main {
         }
     }
 
+    picture {
+        @include breakpoint ("tablet") {
+            grid-column: 3 / 5;
+            grid-row: 1 / 2;
+        }
+    }
+
     .hero {
         margin-inline: auto;
+        width: 100%;
+
+        @include breakpoint("desktop") {
+            width: initial;
+        }
     }
 
     .insights {
         display: grid;
         row-gap: 2rem;
+
+        @include breakpoint ("tablet") {
+            grid-template-columns: repeat(3, 1fr);
+            grid-column: 1 / -1;
+        }
+
+        @include breakpoint ("desktop") {
+            grid-template-columns: 1fr;
+            grid-column: 5 / -1;
+        }
 
         &__data {
             text-align: center;
@@ -62,18 +148,24 @@ main {
             &__n {
                 font-weight: 700;
                 font-size: 3rem;
-                line-height: 56px;
-                /* identical to box height, or 117% */
-                color: var(--primary-text)
+                line-height: 3.5rem;
+                color: var(--primary-text);
+
+                @include breakpoint ("desktop") {
+                    text-align: left;
+                }
             }
 
             &__title {
                 color: var(--secondary-text);
-                line-height: 26px;
-                /* identical to box height, or 162% */
+                line-height: 1.625rem;
                 text-align: center;
                 letter-spacing: 2.5px;
                 text-transform: uppercase;
+
+                @include breakpoint ("desktop") {
+                    text-align: left;
+                }
             }
         }
     }

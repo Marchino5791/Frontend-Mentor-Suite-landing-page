@@ -2,15 +2,35 @@
 
 .quote {
     background-color: var(--primary-text);
-    border-radius: 6px;
-
+    border-radius: 1rem;
     display: grid;
     grid-template-rows: 14rem min-content 1fr;
     align-items: end;
     grid-gap: 2.5rem;
-
     margin-top: 14rem;
     padding-bottom: 4rem;
+
+    @include breakpoint ("tablet") {
+        margin-top: 17rem;
+    }
+
+    @include breakpoint ("desktop") {
+        grid-template-rows: 34rem;
+        grid-template-columns: auto min-content auto;
+        padding-bottom: 0;
+        margin-top: 12.5rem;
+    }
+
+    &__jeremy {
+        background-image: url("../../public/assets/pattern-blur.svg");
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+
+        @include breakpoint ("desktop") {
+            background-position-x: 3.5rem;
+        }
+    }
 
     &__img,
     &__decoration {
@@ -18,9 +38,18 @@
         margin-inline: auto;
     }
 
+    &__img {
+        @include breakpoint("desktop") {
+            margin-inline: auto 0;
+        }
+    }
+
     &__text {
-        text-align: center;
         color: var(--contrast-secondary-text);
+
+        @include breakpoint("desktop") {
+            width: 21.875rem;
+        }
 
         &__title {
             font-weight: 400;
@@ -29,31 +58,47 @@
             /* identical to box height, or 120% */
             text-align: center;
             letter-spacing: -0.416667px;
-            color: var(--contrast-primary-text)
+            color: var(--contrast-primary-text);
+
+            @include breakpoint ("desktop") {
+                font-size: 3rem;
+                line-height: 3.5rem;
+                /* identical to box height, or 117% */
+                letter-spacing: -0.5px;
+                text-align: left;
+            }
         }
 
         &__paragraph {
             margin: 2.5rem 1rem;
             font-size: 1.125rem;
-            line-height: 32px;
-            /* or 178% */
+            line-height: 2rem;
             text-align: center;
             letter-spacing: 0.09px;
+
+            @include breakpoint ("tablet") {
+                margin-inline: 3.625rem;
+            }
+
+            @include breakpoint ("desktop") {
+                font-size: 1.25rem;
+                letter-spacing: 0.1px;
+                margin-inline: 0;
+                text-align: left;
+            }
         }
 
         &__author {
             font-size: 1.125rem;
             font-weight: 700;
-            line-height: 32px;
-            /* identical to box height, or 178% */
+            line-height: 2rem;
             text-align: center;
             letter-spacing: -0.18px;
             color: var(--contrast-primary-text);
         }
 
         &__job {
-            line-height: 26px;
-            /* identical to box height, or 162% */
+            line-height: 1.625rem;
             text-align: center;
             letter-spacing: 2.5px;
             text-transform: uppercase;

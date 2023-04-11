@@ -12,12 +12,19 @@
     --primary-text: hsla(219, 43%, 16%, 1);
     --secondary-text: hsla(219, 20%, 36%, 1);
     --contrast-primary-text: hsla(30, 29%, 97%, 1);
-    --contrast-secondary-text: hsla(30, 35%, 93%, 1);
+    --contrast-secondary-text: hsla(30, 33%, 93%, 1);
+}
+
+html {
+    @include breakpoint("big-screen") {
+        font-size: 112.5%;
+    }
 }
 
 body {
     font-family: 'Epilogue', sans-serif;
-    background-color: var(--contrast-secondary-text);
+    background-color: var(--contrast-primary-text);
+    position: relative;
 }
 
 button {
@@ -25,6 +32,51 @@ button {
     border-radius: 6px;
 }
 
-img, svg {
+img,
+svg {
     display: block;
+}
+
+#root {
+    @include breakpoint("tablet") {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.background {
+    background-color: var(--contrast-secondary-text);
+    position: absolute;
+    z-index: -100;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 41rem;
+
+    @include breakpoint ("desktop") {
+        height: 29rem;
+    }
+}
+
+.app {
+    @include breakpoint ("tablet-small") {
+        margin: 2.5rem 2.5rem 0;
+        max-width: 69.375rem;
+    }
+
+    @include breakpoint ("desktop") {
+        margin-top: 3.125rem;
+    }
+}
+
+.start {
+    align-self: start;
+}
+
+.end {
+    align-self: end;
+}
+
+.center {
+    align-self: center;
 }

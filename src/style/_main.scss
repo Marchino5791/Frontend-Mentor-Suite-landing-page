@@ -82,6 +82,7 @@ main {
             line-height: 28px;
             /* or 175% */
             letter-spacing: 0.0888889px;
+            color: var(--secondary-text);
 
             @include breakpoint ("tablet") {
                 margin-block: 2.5rem;
@@ -130,7 +131,6 @@ main {
 
     .insights {
         display: grid;
-        row-gap: 2rem;
 
         @include breakpoint ("tablet") {
             grid-template-columns: repeat(3, 1fr);

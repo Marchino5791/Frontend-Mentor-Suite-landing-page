@@ -14,7 +14,7 @@ import curved_line_2 from "../../public/assets/pattern-curved-line-2.svg"
 export default function Quote() {
     return (
         <figure className="quote">
-            <picture role="img" aria-labelledby="jeremy" className="quote__jeremy">
+            <picture className="quote__jeremy">
                 <source srcSet={`${jeremy_desktop}, ${jeremy_desktop_2x} 2x`} media="(min-width: 67.5em)" />
                 <source srcSet={`${jeremy_mobile_2x} 2x`} />
                 <img src={jeremy_mobile} alt="Jeremy" className="quote__img" />
@@ -25,7 +25,7 @@ export default function Quote() {
                 <blockquote className="quote__text__paragraph">“I really like how it is an all-in-one solution that handle many of
                     the tasks that you would normally need separate tools to do the same
                     job. This thing is a miracle worker.”</blockquote>
-                <p id="jeremy" className="quote__text__author">Jeremy Robinson</p>
+                <p className="quote__text__author">Jeremy Robinson</p>
                 <p className="quote__text__job">CMO, Fylo</p>
             </figcaption>
         </figure>

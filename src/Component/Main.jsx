@@ -18,7 +18,7 @@ export default function Main() {
     return (
         <main>
             <section className="heading">
-                <img src={curved_line_1} aria-hidden="true" className="heading__decoration"/>
+                <img src={curved_line_1} alt="Decoration: curved line" aria-hidden="true" className="heading__decoration"/>
                 <h1 className="heading__title">A <strong>super solution</strong> for your <strong>business.</strong></h1>
                 <p className="heading__subtitle">Our marketing and sales automations help you scale your outreach to
                     get more leads for your company. </p>
@@ -27,7 +27,8 @@ export default function Main() {
 
             <picture>
                 <source srcSet={`${hero_port}, ${hero_port_2x} 2x`} media="(min-width: 48em)" /> 
-                <img srcSet={`${hero_land}, ${hero_land_2x} 2x`} alt="Hero image" className="hero" />
+                <source srcSet={`${hero_land_2x} 2x`} />
+                <img src={hero_land} alt="Hero image" className="hero" />
             </picture>
             
             <aside className="insights">
